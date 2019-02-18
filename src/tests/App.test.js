@@ -14,7 +14,6 @@ import Adapter from "enzyme-adapter-react-16";
 configure({ adapter: new Adapter() });
 
 
-
 describe("App test", function() {
   it("renders without crashing", function () {
     shallow(<App  />);

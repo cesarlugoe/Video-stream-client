@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
-import { BrowserRouter as Router} from 'react-router-dom';
+
+import Routes from "./Routes";
+
 
 
 ReactDOM.render(
-   <Router>
-      <App />
-   </Router> 
+   <div className="app ui container">
+      <Routes />
+   </div>
 , document.querySelector('#root'));
 
 
