@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Route, Switch} from 'react-router-dom';
+import React, { Component } from "react";
+import { Route, Switch } from "react-router-dom";
 
 import StreamList from "./streams/StreamList";
 import StreamShow from "./streams/StreamShow";
@@ -7,7 +7,6 @@ import StreamEdit from "./streams/StreamEdit";
 import StreamCreate from "./streams/StreamCreate";
 import StreamDelete from "./streams/StreamDelete";
 import NotFoundPage from "./NotFoundPage";
-
 
 class App extends Component {
   render() {
