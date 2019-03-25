@@ -16,8 +16,7 @@ class GoogleAuth extends React.Component {
         }) // init returns a promise, load only accepts callback
         .then(() => {
           this.auth = window.gapi.auth2.getAuthInstance();
-          const isSignedIn = this.auth.isSignedIn.get();
-          this.props.dispatch(onAuthChange(isSignedIn));
+          this.props.dispatch(onAuthChange(this.auth));
         })
         .catch(err => {
           console.log(err);
