@@ -2,6 +2,8 @@ import React from "react";
 import { configure, shallow, mount } from "enzyme";
 import App from "../components/App";
 import { MemoryRouter } from "react-router";
+import configureStore from 'redux-mock-store';
+import { Provider } from 'react-redux';
 
 import StreamList from "../components/streams/StreamList";
 import StreamCreate from "../components/streams/StreamCreate";
@@ -13,6 +15,8 @@ import PageNotFound from "../components/NotFoundPage";
 import Adapter from "enzyme-adapter-react-16";
 configure({ adapter: new Adapter() });
 
+const mockStore = configureStore();
+const store = mockStore();
 
 describe("App test", function() {
   it("renders without crashing", function () {
@@ -23,9 +27,11 @@ describe("App test", function() {
 
 const wrapper = path =>
   mount(
-    <MemoryRouter initialEntries={[path]}>
-        <App />
-    </MemoryRouter>
+    <Provider store={store}>
+      <MemoryRouter initialEntries={[path]}>
+          <App />
+      </MemoryRouter>
+    </Provider>
   );
 
 describe("Routes test", function() {
